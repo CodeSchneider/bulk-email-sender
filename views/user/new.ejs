@@ -1,0 +1,56 @@
+<h1>Add New User</h1>
+
+<div class="controls">
+  <ul>
+    <li><a href="/users">Home</a></li>
+    <li><a href="/users/new">Create User Manually</a></li>
+    <li><a href="/import/csv">Import CSV</a></li>
+    <li><a href="/users/destroy">Delete All Users</a></li>
+  </ul>
+</div>
+
+<form action="/users" method="post">
+
+  <div>
+    <label for="firstName">First Name</label>
+    <input type="text" id="firstName" name="firstName">
+  </div>
+
+  <div>
+    <label for="lastName">Last Name</label>
+    <input type="text" id="lastName" name="lastName">
+  </div>
+
+  <div>
+    <label for="position">Position</label>
+    <input type="text" id="position" name="position">
+  </div>
+
+  <div>
+    <label for="company">Company</label>
+    <input type="text" id="company" name="company">
+  </div>
+
+  <div>
+    <label for="industry">Industry</label>
+    <input type="text" id="industry" name="industry">
+  </div>
+
+  <div>
+    <label for="companySize">Company Size</label>
+    <input type="text" id="companySize" name="companySize">
+  </div>
+
+  <div>
+    <label for="emailAddress">Email Address</label>
+    <input type="text" id="emailAddress" name="emailAddress">
+  </div>
+
+  <div>
+    <label for="website">Website</label>
+    <input type="text" id="website" name="website">
+  </div>
+
+  <input type="submit" value="Submit">
+
+</form>

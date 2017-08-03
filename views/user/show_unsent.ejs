@@ -1,0 +1,47 @@
+<h1><span>All <b>Unemailed</b> Users<span>&nbsp;<span>Total: <%=total%></span></h1>
+
+<div class="controls">
+  <ul>
+    <li><a href="/users">Home</a></li>
+    <li><a href="/users/new">Create User Manually</a></li>
+    <li><a href="/import/csv">Import CSV</a></li>
+    <li><a href="/users/destroy">Delete All Users</a></li>
+  </ul>
+</div>
+
+<table>
+  <tr>
+    <th>Sent Email?</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Position</th>
+    <th>Company</th>
+    <th>Industry</th>
+    <th>Company Size</th>
+    <th>Email Address</th>
+    <th>Website</th>
+    <th>linkedin URL</th>
+    <th>View</th>
+    <th>Edit</th>
+    <th>Email</th>
+    <th>Delete</th>
+  </tr>
+  <% _.each( users, function(user) { %>
+  <tr>
+    <th><%= user.wasEmailed ? 'Yes' : 'No' %></th>
+    <th><%=user.firstName%></th>
+    <th><%=user.lastName%></th>
+    <th><%=user.position%></th>
+    <th><%=user.company%></th>
+    <th><%=user.industry%></th>
+    <th><%=user.companySize%></th>
+    <th><%=user.emailAddress%></th>
+    <th><%=user.website%></th>
+    <th><%=user.linkedinURL%></th>
+    <th><a href="/users/<%=user.id%>">View</a></th>
+    <th><a href="/users/edit/<%=user.id%>">Edit</a></th>
+    <th><a href="/email/<%=user.id%>">Email</a></th>
+    <th><a href="/users/destroy/<%=user.id%>">Delete</a></th>
+  </tr>
+  <% }) %>
+</table>

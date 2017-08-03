@@ -32,9 +32,24 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  '/': {
-    view: 'homepage'
-  }
+  //Users
+  'get /': 'UserController.unsent',
+  'get /users': 'UserController.unsent',
+  'get /users/destroy': 'UserController.destroyAllUsers',
+  'get /users/new': 'UserController.new',
+  'get /users/destroy/:id': 'UserController.destroyUser',
+  'get /users/edit/:id': 'UserController.edit',
+  'get /users/:id': 'UserController.show',
+  'post /users': 'UserController.create', //manual creation
+  'post /users/:id': 'UserController.update',
+
+  //Import
+  'get /import/csv': 'ImportController.show_csv',
+  'post /import/csv': 'ImportController.import_csv',
+
+  //Email
+  'get /email/all': 'EmailController.emailAll', //email all users who haven't been emailed
+  'get /email/:id': 'EmailController.emailOneUser'
 
   /***************************************************************************
   *                                                                          *

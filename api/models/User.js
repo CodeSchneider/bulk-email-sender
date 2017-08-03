@@ -47,7 +47,8 @@ module.exports = {
 
     emailAddress: {
       type: 'email',
-      required: true
+      required: true,
+      unique: true
     },
 
     website: {
@@ -58,6 +59,11 @@ module.exports = {
     linkedinURL: {
       type: 'string',
       required: false
+    },
+
+    wasEmailed: {
+      type: 'boolean',
+      defaultsTo: false
     }
 
   }
